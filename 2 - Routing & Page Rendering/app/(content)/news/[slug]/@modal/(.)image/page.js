@@ -1,8 +1,14 @@
-import { DUMMY_NEWS } from "@/dummy-news";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+"use client"; 
 
-export default function InterceptedImagePage({params}) {
+ import { DUMMY_NEWS } from "@/dummy-news";
+ import Link from "next/link";
+ import { notFound, useRouter} from "next/navigation";
+
+ export default function InterceptedImagePage({params}) {
+  const router =  useRouter();
+   
+   router.back();
+
     const newsItemSlug = params.slug;
     const newsItem = DUMMY_NEWS.find(newsItem => newsItem.slug === newsItemSlug);
 
@@ -12,7 +18,7 @@ export default function InterceptedImagePage({params}) {
 
     return (
  <>
-  <div className="modal-backdrop" />
+  <div className="modal-backdrop" onClick={router.back} />
 
  <dialog className="modal" open>
    <div className="fullscreen-image">
