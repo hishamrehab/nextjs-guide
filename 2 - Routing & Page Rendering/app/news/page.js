@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function  NewsPage() {
     return <>
     <h1>
-        News pAGE
+        News Page
     </h1>
     <ul>
         <li>
