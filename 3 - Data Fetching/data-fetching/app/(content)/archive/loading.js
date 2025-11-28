@@ -1,5 +1,5 @@
 export default function ArchiveLoading() {
-    return <>
+    return <p>
     Loading...
-    </>
+    </p>
 }
