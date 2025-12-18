@@ -44,6 +44,7 @@ import { uploadImage } from "@/lib/cloudinary";
     userId: 1,
   });
 
+  revalidatePath('/' , 'layout');
   redirect('/feed');
 }
 
