@@ -1,6 +1,6 @@
 "use server";
 import { uploadImage } from "@/lib/cloudinary";
-    import { storePost } from "@/lib/posts";
+    import { storePost, updatePostLikeStatus } from "@/lib/posts";
     import { redirect } from "next/navigation";
 
 
@@ -46,3 +46,11 @@ import { uploadImage } from "@/lib/cloudinary";
 
   redirect('/feed');
 }
+
+
+export async function togglePostLikeStatus(postId) {
+  await  updatePostLikeStatus( postId, 2);
+  revalidatePath('/' , 'layout');
+}
+
+  
